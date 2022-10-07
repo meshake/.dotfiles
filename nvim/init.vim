@@ -1,4 +1,4 @@
-uall plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/plugged')
 " gruvbox theme
 Plug 'gruvbox-community/gruvbox'
 
