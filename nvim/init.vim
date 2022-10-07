@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+uall plug#begin('~/.vim/plugged')
 " gruvbox theme
 Plug 'gruvbox-community/gruvbox'
 
@@ -10,9 +10,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-
-" File tree
-Plug 'kyazdani42/nvim-tree.lua'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
