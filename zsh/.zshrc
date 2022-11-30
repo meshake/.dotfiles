@@ -99,10 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
 alias vim="nvim"
-alias evim="vim ~/.dotfiles/nvim/init.vim"
-alias ezsh="vim ~/.dotfiles/zsh/.zshrc"
 
 # Fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
