@@ -106,3 +106,8 @@ alias ezsh="vim ~/.dotfiles/zsh/.zshrc"
 
 # Fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Start tmux on every shell login: https://wiki.archlinux.org/title/Tmux#Start_tmux_on_every_shell_login
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    tmux attach || tmux >/dev/null 2>&1
+fi
