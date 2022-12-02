@@ -27,7 +27,7 @@ cmp.setup({
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.close()
+    ['<CR>'] = cmp.mapping.confirm()
   },
   -- Installed sources
   sources = {
