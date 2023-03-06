@@ -25,6 +25,7 @@ require("packer").startup(function(use)
     -- auto completion
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-nvim-lsp"
+    use "L3MON4D3/LuaSnip"
 
     -- undo tree
     use "mbbill/undotree"

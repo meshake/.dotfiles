@@ -27,12 +27,19 @@ cmp.setup({
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm()
+    ['<CR>'] = cmp.mapping.confirm({ select = true })
+  },
+  snippet = {
+    expand = 
+        function(args)
+            require('luasnip').lsp_expand(args.body)
+        end,
   },
   -- Installed sources
   sources = {
-    { name = 'nvim_lsp' }
-  },
+    { name = 'nvim_lsp'},
+    { name = 'luasnip'},
+  }
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
