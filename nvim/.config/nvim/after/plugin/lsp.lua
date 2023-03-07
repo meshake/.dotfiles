@@ -75,9 +75,16 @@ cmp.setup {
   },
 }
 
+-- Add borders
+local handlers =  {
+  ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = "rounded"}),
+  ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = "rounded"}),
+}
+
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require('lspconfig')['rust_analyzer'].setup {
     on_attach = on_attach,
-    capabilities = capabilities
+    capabilities = capabilities,
+    handlers = handlers
 }
