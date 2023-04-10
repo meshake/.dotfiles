@@ -17,6 +17,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+  vim.keymap.set('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', bufopts)
 end
 
 -- completeopt is used to manage code suggestions
@@ -84,6 +85,12 @@ local handlers =  {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require('lspconfig')['rust_analyzer'].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    handlers = handlers
+}
+
+require('lspconfig')['pyright'].setup {
     on_attach = on_attach,
     capabilities = capabilities,
     handlers = handlers
