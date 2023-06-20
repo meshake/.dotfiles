@@ -84,14 +84,32 @@ local handlers =  {
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+-- Rust
 require('lspconfig')['rust_analyzer'].setup {
     on_attach = on_attach,
     capabilities = capabilities,
     handlers = handlers
 }
 
+-- Python
 require('lspconfig')['pyright'].setup {
     on_attach = on_attach,
     capabilities = capabilities,
     handlers = handlers
 }
+
+-- Metals
+local metals_config = require("metals").bare_config()
+metals_config.on_attach = on_attach
+metals_config.capabilities = capabilities
+
+local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "scala", "sbt", "java" },
+    callback = 
+        function()
+            require("metals").initialize_or_attach(metals_config)
+        end,
+    group = nvim_metals_group,
+})

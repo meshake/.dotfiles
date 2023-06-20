@@ -32,4 +32,7 @@ require("packer").startup(function(use)
 
     -- theme
     use "folke/tokyonight.nvim"
+
+    -- Scala metals
+    use "scalameta/nvim-metals"
 end)
