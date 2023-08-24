@@ -9,7 +9,7 @@ require("packer").startup(function(use)
 
     -- telescope
     use {
-        "nvim-telescope/telescope.nvim", tag = "0.1.0",
+        "nvim-telescope/telescope.nvim", tag = "0.1.2",
         requires = { "nvim-lua/plenary.nvim" }
     }
 
@@ -34,5 +34,8 @@ require("packer").startup(function(use)
     use "folke/tokyonight.nvim"
 
     -- Scala metals
-    use "scalameta/nvim-metals"
+    use {
+        "scalameta/nvim-metals",
+        requires = { "nvim-lua/plenary.nvim" }
+    }
 end)
